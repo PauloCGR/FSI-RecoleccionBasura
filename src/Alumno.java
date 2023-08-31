@@ -2,7 +2,7 @@ import java.io.Serializable;
 import java.sql.PreparedStatement;
 
 public class Alumno implements Serializable
-{
+{ 
     String codigo, nombre, carrera, edad, creditos, estatus, sexo;
 
     public Alumno(String codigo, String nombre, String carrera, String edad, String creditos, String estatus, String sexo) {
