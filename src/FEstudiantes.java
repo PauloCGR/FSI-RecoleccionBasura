@@ -77,7 +77,7 @@ public class FEstudiantes extends javax.swing.JFrame {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
         jPanel3.add(jLabel4);
-        jLabel4.setBounds(0, 0, 1050, 90);
+        jLabel4.setBounds(0, 0, 370, 90);
 
         bReporte1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/eliminar.png"))); // NOI18N
         bReporte1.setActionCommand("DatosBasura");
@@ -181,6 +181,8 @@ public class FEstudiantes extends javax.swing.JFrame {
 
     private void bReporte1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bReporte1ActionPerformed
         // TODO add your handling code here:
+        DatosBasura datosBasuraFrame = new DatosBasura();
+        datosBasuraFrame.setVisible(true);
     }//GEN-LAST:event_bReporte1ActionPerformed
 
     
