@@ -32,15 +32,15 @@ public class DatosBasura extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        TNombre = new javax.swing.JTextField();
+        TRuta = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        TCodigo = new javax.swing.JTextField();
+        TEmpleado = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        TCarrera = new javax.swing.JTextField();
-        CBEstatus = new javax.swing.JComboBox();
-        CBSexo = new javax.swing.JComboBox();
+        TLugar = new javax.swing.JTextField();
+        CBBasura = new javax.swing.JComboBox();
+        CBBasurero = new javax.swing.JComboBox();
         jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -68,9 +68,14 @@ public class DatosBasura extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         jLabel3.setText("Empleado");
 
-        TCodigo.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+        TEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TEmpleadoActionPerformed(evt);
+            }
+        });
+        TEmpleado.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                TCodigoPropertyChange(evt);
+                TEmpleadoPropertyChange(evt);
             }
         });
 
@@ -80,12 +85,17 @@ public class DatosBasura extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         jLabel10.setText("Basurero");
 
-        CBEstatus.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "activo", "egresado", "pasante", "titulado", "B4", "B5", "BA", "BV" }));
+        CBBasura.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Orgánica", "Inorgánica", "Reciclable", "No Reciclable", "Residuos Peligrosos", "Residuos Electrónicos (e-waste)", "Residuos Médicos", "Residuos de Construcción y Demolición", "Residuos Biodegradables", "Residuos Textiles", "Residuos Alimenticios", "Residuos Plásticos", "Residuos de Jardinería", "Residuos Radioactivos", "Residuos de Aceite y Grasa" }));
 
-        CBSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Masculino", "Femenino", "Otro" }));
+        CBBasurero.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Basurero Autlan", "Basurero El Grullo", "Basurero Union de Tula" }));
 
         jButton1.setIcon(new javax.swing.ImageIcon("E:\\Escritorio\\guardar-el-archivo.png")); // NOI18N
         jButton1.setText("Guardar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -103,18 +113,17 @@ public class DatosBasura extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(TCarrera, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TLugar, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(TCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(TEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(TNombre, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(TRuta, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(332, 332, 332))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(CBSexo, javax.swing.GroupLayout.Alignment.LEADING, 0, 121, Short.MAX_VALUE)
-                                .addComponent(CBEstatus, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CBBasura, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CBBasurero, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -123,23 +132,23 @@ public class DatosBasura extends javax.swing.JFrame {
                 .addGap(14, 14, 14)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(TCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(TNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TRuta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(TCarrera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TLugar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(CBEstatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CBBasura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(CBSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CBBasurero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(462, 462, 462))
@@ -204,9 +213,9 @@ public class DatosBasura extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TCodigoPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_TCodigoPropertyChange
+    private void TEmpleadoPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_TEmpleadoPropertyChange
 
-    }//GEN-LAST:event_TCodigoPropertyChange
+    }//GEN-LAST:event_TEmpleadoPropertyChange
 
     private void TEstudiantesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TEstudiantesMousePressed
 
@@ -218,6 +227,42 @@ public class DatosBasura extends javax.swing.JFrame {
             cnx.desconectar();
         }
     }//GEN-LAST:event_formWindowClosed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        String emp = TEmpleado.getText();
+        String rut = TRuta.getText();
+        String lug = TLugar.getText();
+        String bas = CBBasura.getSelectedItem().toString();
+        String basu = CBBasurero.getSelectedItem().toString();
+        
+        Alumno aa = new Alumno(bas, basu, lug, rut, emp);
+        if (TEmpleado.getText().equals("") && TRuta.getText().equals("") && TLugar.getText().equals(""))
+        {
+            JOptionPane.showMessageDialog(this, "Para continuar es necesario llenar todos los campos.");
+        }
+        else
+        {
+            if (aa.insertar(cnx)==1) 
+            {
+                cnx.entablar("SELECT * FROM datosbasura", TEstudiantes);
+                JOptionPane.showMessageDialog(this, "Registro agregado con éxito.");
+                TEmpleado.setText("");
+                TRuta.setText("");
+                TLugar.setText("");
+                CBBasura.setSelectedItem("");
+                CBBasurero.setSelectedItem("");
+            } 
+            else 
+            {
+                JOptionPane.showMessageDialog(this, "Error al agregar el registro. Intente de nuevo.");
+            }
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void TEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TEmpleadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TEmpleadoActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -252,14 +297,12 @@ public class DatosBasura extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox CBEstatus;
-    private javax.swing.JComboBox CBSexo;
-    private javax.swing.JTextField TCarrera;
-    private javax.swing.JTextField TCodigo;
+    private javax.swing.JComboBox CBBasura;
+    private javax.swing.JComboBox CBBasurero;
+    private javax.swing.JTextField TEmpleado;
     private javax.swing.JTable TEstudiantes;
-    private javax.swing.JTextField TNombre;
-    private javax.swing.JButton bRegistrar;
-    private javax.swing.JButton bRegistrar1;
+    private javax.swing.JTextField TLugar;
+    private javax.swing.JTextField TRuta;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

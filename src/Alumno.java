@@ -5,7 +5,7 @@ public class Alumno implements Serializable
 { 
     String TipoBasura, Basurero, Lugar, Ruta, DatosEmpleado;
 
-    public Alumno(String TipoBasura, String Basurero, String Lugar, String Ruta, String DatosEmpleado, String estatus, String sexo) {
+    public Alumno(String TipoBasura, String Basurero, String Lugar, String Ruta, String DatosEmpleado) {
         this.TipoBasura = TipoBasura;
         this.Basurero = Basurero;
         this.Lugar = Lugar;
@@ -16,7 +16,7 @@ public class Alumno implements Serializable
     {
         try
         {
-            String sql = "INSERT INTO datosbasura VALUES (?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO datosbasura VALUES (?, ?, ?, ?, ?)";
             PreparedStatement ps = cnx.con.prepareStatement(sql);
             ps.setString(1, TipoBasura);
             ps.setString(2, Basurero);
