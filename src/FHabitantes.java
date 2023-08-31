@@ -7,17 +7,16 @@ public class FHabitantes extends javax.swing.JFrame {
     
     public FHabitantes() {
         initComponents();
+        setLocationRelativeTo(null);
         
-        try {
-            cn.conectar("localhost", "basura", "root", "");
-            JOptionPane.showMessageDialog(null, "Conexion correcta a la base de datos", "Mensaje del sistema", JOptionPane.INFORMATION_MESSAGE);
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error al conectar a la base de datos", "Mensaje del Sistema", JOptionPane.INFORMATION_MESSAGE);
-            this.dispose();
+        if (cn.conectar("localhost", "basura", "root", "")==1) {
+            JOptionPane.showMessageDialog(this, "Conectado la base de datos");
+            cn.entablar("SELECT * FROM datosresidentes", Tb_Habitantes);
         }
-        
-        
+        else{
+            JOptionPane.showMessageDialog(this, "Error en la conexion a la base de datos");
+            System.exit(0); //salir de la ejecucion
+        }
         
     }
 
@@ -162,7 +161,9 @@ public class FHabitantes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
-        cn.desconectar();
+        if (cn!=null) {
+            cn.desconectar();
+        }
     }//GEN-LAST:event_formWindowClosed
 
     /**
