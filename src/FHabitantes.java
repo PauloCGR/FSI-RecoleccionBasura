@@ -94,6 +94,11 @@ public class FHabitantes extends javax.swing.JFrame {
         cbResidencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Departamento", "Restaurante", "Hospital", "Negocio", "Casa" }));
 
         btnRegistrar.setText("Registrar");
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -166,6 +171,23 @@ public class FHabitantes extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_formWindowClosed
 
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        String nombre = TNombre.getText();
+        String domicilio = TDireccion.getText();
+        String residencia = cbResidencia.getSelectedItem().toString();
+        
+        Residente rs = new Residente(nombre, domicilio, residencia);
+        if (rs.insertar(cn)==1) {
+            JOptionPane.showMessageDialog(this, "Registro exitoso");
+            cn.entablar("SELECT * FROM datosresidentes", Tb_Habitantes);
+            LimpiarCampos();
+        } 
+        else 
+        {
+            JOptionPane.showMessageDialog(this, "El registro ha fallado, favor revise los campos e intente de nuevo");
+        }
+    }//GEN-LAST:event_btnRegistrarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -199,6 +221,12 @@ public class FHabitantes extends javax.swing.JFrame {
                 new FHabitantes().setVisible(true);
             }
         });
+    }
+    
+    private void LimpiarCampos(){
+        TNombre.setText("");
+        TDireccion.setText("");
+        cbResidencia.setSelectedIndex(0);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
