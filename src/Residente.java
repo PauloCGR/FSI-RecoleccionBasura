@@ -15,7 +15,7 @@ public class Residente implements Serializable
     {
         try
         {
-            String sql = "INSERT INTO datosresidentes VALUES (?, ?, ?)";
+            String sql = "INSERT INTO datosresidentes (Nombre, Domicilio, TipoResidencia) VALUES (?, ?, ?)";
             PreparedStatement ps = cnx.con.prepareStatement(sql);
             ps.setString(1, nombre);
             ps.setString(2, domicilio);
