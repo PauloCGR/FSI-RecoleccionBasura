@@ -16,7 +16,7 @@ public class Alumno implements Serializable
     {
         try
         {
-            String sql = "INSERT INTO datosbasura VALUES (?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO datosbasura (TipoBasura, Basurero, Lugar, Ruta, DatosEmpleado)VALUES (?, ?, ?, ?, ?)";
             PreparedStatement ps = cnx.con.prepareStatement(sql);
             ps.setString(1, TipoBasura);
             ps.setString(2, Basurero);

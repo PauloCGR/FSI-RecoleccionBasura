@@ -89,7 +89,6 @@ public class DatosBasura extends javax.swing.JFrame {
 
         CBBasurero.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Basurero Autlan", "Basurero El Grullo", "Basurero Union de Tula" }));
 
-        jButton1.setIcon(new javax.swing.ImageIcon("E:\\Escritorio\\guardar-el-archivo.png")); // NOI18N
         jButton1.setText("Guardar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
