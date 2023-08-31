@@ -113,7 +113,7 @@ public class FEstudiantes extends javax.swing.JFrame {
         });
 
         bNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/new2.png"))); // NOI18N
-        bNuevo.setText("NUEVO");
+        bNuevo.setText("Residentes");
         bNuevo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         bNuevo.setMaximumSize(new java.awt.Dimension(60, 64));
         bNuevo.setMinimumSize(new java.awt.Dimension(60, 64));
@@ -166,7 +166,8 @@ public class FEstudiantes extends javax.swing.JFrame {
     }//GEN-LAST:event_bRegistrarActionPerformed
 
     private void bNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bNuevoActionPerformed
-
+        FHabitantes fh = new FHabitantes();
+        fh.setVisible(true);
     }//GEN-LAST:event_bNuevoActionPerformed
 
     private void bReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bReporteActionPerformed
