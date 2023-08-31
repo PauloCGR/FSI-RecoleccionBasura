@@ -40,7 +40,6 @@ public class FEstudiantes extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         bReporte1 = new javax.swing.JButton();
         bReporte = new javax.swing.JButton();
-        bRegistrar = new javax.swing.JButton();
         bNuevo = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -90,25 +89,14 @@ public class FEstudiantes extends javax.swing.JFrame {
             }
         });
 
-        bReporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Print(1).png"))); // NOI18N
-        bReporte.setText("REPORTE");
+        bReporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/trabajador.png"))); // NOI18N
         bReporte.setFocusable(false);
         bReporte.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bReporte.setLabel("Recolectores");
         bReporte.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         bReporte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bReporteActionPerformed(evt);
-            }
-        });
-
-        bRegistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/add1.png"))); // NOI18N
-        bRegistrar.setText("REGISTRAR");
-        bRegistrar.setFocusable(false);
-        bRegistrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        bRegistrar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        bRegistrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bRegistrarActionPerformed(evt);
             }
         });
 
@@ -133,9 +121,7 @@ public class FEstudiantes extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(83, 83, 83)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(bReporte, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(bRegistrar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(bNuevo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(bReporte1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -151,9 +137,7 @@ public class FEstudiantes extends javax.swing.JFrame {
                 .addComponent(bReporte1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(bReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(bRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         bReporte1.getAccessibleContext().setAccessibleName("DatosBasura");
@@ -161,17 +145,14 @@ public class FEstudiantes extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRegistrarActionPerformed
-        //Obtener los datos de los controles
-    }//GEN-LAST:event_bRegistrarActionPerformed
-
     private void bNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bNuevoActionPerformed
         FHabitantes fh = new FHabitantes();
         fh.setVisible(true);
     }//GEN-LAST:event_bNuevoActionPerformed
 
     private void bReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bReporteActionPerformed
-
+         FRecolector recolector = new FRecolector();
+        recolector.setVisible(true);
     }//GEN-LAST:event_bReporteActionPerformed
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
@@ -228,7 +209,6 @@ public class FEstudiantes extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bNuevo;
-    private javax.swing.JButton bRegistrar;
     private javax.swing.JButton bReporte;
     private javax.swing.JButton bReporte1;
     private javax.swing.JLabel jLabel4;

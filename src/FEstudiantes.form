@@ -48,10 +48,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="bReporte" alignment="0" max="32767" attributes="0"/>
-                      <Component id="bRegistrar" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="bReporte" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                       <Component id="bNuevo" alignment="0" max="32767" attributes="0"/>
                       <Component id="bReporte1" alignment="0" min="-2" pref="199" max="-2" attributes="0"/>
@@ -71,9 +68,7 @@
               <Component id="bReporte1" min="-2" pref="69" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="bReporte" min="-2" pref="69" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="bRegistrar" min="-2" pref="69" max="-2" attributes="0"/>
-              <EmptySpace pref="54" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -152,29 +147,15 @@
     <Component class="javax.swing.JButton" name="bReporte">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagenes/Print(1).png"/>
+          <Image iconType="3" name="/imagenes/trabajador.png"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="REPORTE"/>
         <Property name="focusable" type="boolean" value="false"/>
         <Property name="horizontalTextPosition" type="int" value="0"/>
+        <Property name="label" type="java.lang.String" value="Recolectores"/>
         <Property name="verticalTextPosition" type="int" value="3"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bReporteActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="bRegistrar">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagenes/add1.png"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="REGISTRAR"/>
-        <Property name="focusable" type="boolean" value="false"/>
-        <Property name="horizontalTextPosition" type="int" value="0"/>
-        <Property name="verticalTextPosition" type="int" value="3"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bRegistrarActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="bNuevo">
