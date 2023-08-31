@@ -3,30 +3,26 @@ import java.sql.PreparedStatement;
 
 public class Alumno implements Serializable
 { 
-    String codigo, nombre, carrera, edad, creditos, estatus, sexo;
+    String TipoBasura, Basurero, Lugar, Ruta, DatosEmpleado;
 
-    public Alumno(String codigo, String nombre, String carrera, String edad, String creditos, String estatus, String sexo) {
-        this.codigo = codigo;
-        this.nombre = nombre;
-        this.carrera = carrera;
-        this.edad = edad;
-        this.creditos = creditos;
-        this.estatus = estatus;
-        this.sexo = sexo;
+    public Alumno(String TipoBasura, String Basurero, String Lugar, String Ruta, String DatosEmpleado, String estatus, String sexo) {
+        this.TipoBasura = TipoBasura;
+        this.Basurero = Basurero;
+        this.Lugar = Lugar;
+        this.Ruta = Ruta;
+        this.DatosEmpleado = DatosEmpleado;
     }
     public int insertar(Conexion cnx)
     {
         try
         {
-            String sql = "INSERT INTO alumnos VALUES (?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO datosbasura VALUES (?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement ps = cnx.con.prepareStatement(sql);
-            ps.setString(1, codigo);
-            ps.setString(2, nombre);
-            ps.setString(3, carrera);
-            ps.setString(4, edad);
-            ps.setString(5, creditos);
-            ps.setString(6, estatus);
-            ps.setString(7, sexo);
+            ps.setString(1, TipoBasura);
+            ps.setString(2, Basurero);
+            ps.setString(3, Lugar);
+            ps.setString(4, Ruta);
+            ps.setString(5, DatosEmpleado);
             int resp = ps.executeUpdate();
             return resp;
         }

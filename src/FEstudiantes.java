@@ -16,7 +16,7 @@ import javax.swing.table.TableRowSorter;
  * @author drlias
  */
 public class FEstudiantes extends javax.swing.JFrame {
-
+    
    Conexion cnx = new Conexion();
     
     public FEstudiantes() {
